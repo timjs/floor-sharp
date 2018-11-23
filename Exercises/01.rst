@@ -1,0 +1,62 @@
+Introduction
+------------
+
+   Note: all code examples are show as if entered in F# Interactive (``fsharpi``).
+   The last line starting with a ``>`` contains the response from F# after typing
+   ``;;`` and hitting return (enter).
+
+1. Given the function ``double``:
+
+.. code:: fsharp
+
+   let double x = x + x
+   > val double : int -> int
+
+give two possible derivations of the term ``double (double 2)``, i.e:
+
+A. one expanding the inner ``double`` first,
+B. another expanding the outer ``double`` first.
+
+2. Recall the definition of ``sum``:
+
+.. code:: fsharp
+
+   let rec sum xs =
+     match xs with
+     | [] -> 0
+     | n :: ns -> n + sum ns
+   > val sum : int list -> int
+
+-  Define a function ``product`` of type ``int list -> int``
+   that produces the product of a list of integers.
+-  Check your definition using ``fsharpi``.
+-  Using your definition to show that ``product [2; 3; 4] == 24``.
+   (Recall that ``[2; 3; 4]`` is syntactic sugar for ``2 :: 3 :: 4 :: []``,
+   where ``::`` is the infix cons operator.)
+
+3. What are the types of the following values?
+
+-  ``['a'; 'b'; 'c']``
+-  ``('a', 'b', 'c')``
+-  ``[(false, '0'); (true, '1')]``
+-  ``([false; '0'], [true; '1'])``
+-  ``[sum; product]``
+
+4. Write down definitions that have the following types;
+   it does not matter what the definitions actually do,
+   as long as they are type correct.
+
+-  ``bools : bool list``
+-  ``nums : int int list``
+-  ``add : int -> int -> int -> int``
+-  ``copy : 'a -> 'a * 'a``
+-  ``apply : ('a -> 'b) -> 'a -> 'b``
+
+5. What are the types of the following functions?
+
+-  ``swap (x, y) = (y, x)``
+-  ``pair x y = (x, y)``
+-  ``double x = x * 2``
+-  ``twice f x = f (f x)``
+
+6. Check your answers to the preceding three questions using ``fsharpi``.
